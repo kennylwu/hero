@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=development & nodemon ./src/index.js",
     "test": "SET NODE_ENV=test mocha --exit",
-    "start": "npm run dev",
-    "build": "webpack -d --watch"
+    "start": "node ./src/index.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
