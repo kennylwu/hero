@@ -25,7 +25,7 @@ class FoodsDisplay extends Component {
     debugger;
     let foods = resp.data;
     this.setState({ foods: foods });
-    this.filterdHeros();
+    //this.filterdHeros();
     console.log("service call", this.state.foods);
   };
   onError = resp => {
@@ -70,19 +70,12 @@ class FoodsDisplay extends Component {
   filterdHeros() {
     if (this.state.foods) {
       let filtedHeros = [];
-      let i = 0;
-      // while (i < this.state.foods.length) {
-      //   let item = this.state.foods[i]
-      //   if (filtedHeros.indexOf(item.hero_name) != -1) {
-      //     filtedHeros.push(item.hero_name);
-      //   }
-      //   i++;
-      // }
       let newFoods =
         this.state.foods != undefined
           ? this.state.foods.filter((item, index) => {
               console.log(filtedHeros, item.hero_name);
-              if (filtedHeros.indexOf(item.hero_name) != -1) {
+              if (filtedHeros.indexOf(item.hero_name) == -1) {
+                filtedHeros.push(item.hero_name);
                 return true;
               } else {
                 return false;
